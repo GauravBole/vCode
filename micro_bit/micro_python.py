@@ -6,4 +6,4 @@ import machine
 import music 
 import random
 while True:
-  display.scroll(0)
+  display.show(Image.HEART)

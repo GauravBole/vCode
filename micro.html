@@ -245,6 +245,7 @@
 
 <script type="text/javascript">
     function runCode() {
+	    //console.log(">")
         var user_code = $('#code').val();
         let import_code = "from microbit import *\n" + "import time \n" + "import math \n" + "import sys \n" + "import machine \n" + "import music \n" + "import random\n";
 
@@ -261,6 +262,7 @@
         }
       }
     }
+	    //console.log("-->", code)
 
         $.ajax({
             type: "POST",
@@ -270,7 +272,7 @@
             processData: false,
             contentType: false,
             success: function (data) {
-
+		//console.log(data, "result")
                 if (data['message'] === "success") {
                     // alert("Your Script Running Check Microbit")
                     $('#id_message_body').html("");

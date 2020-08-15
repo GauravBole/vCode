@@ -4,7 +4,7 @@ import json
 import struct
 import binascii
 import ctypes
-import typing
+
 from runtime import _RUNTIME
 from subprocess import check_output
 can_minify = True
@@ -217,7 +217,7 @@ if __name__ == '__main__':
     """
 
     python_script = sys.argv[1]
-    print(python_script, "...................>")
+    #print(python_script, "...................>")
     try:
         user_file_name = sys.argv[2]
     except (AttributeError, IndexError) as e:
@@ -230,5 +230,6 @@ if __name__ == '__main__':
     # if file_path:
     #     print("in if")
     write_python_code_on_file(code=python_script, filepath=file_name_with_path)
-
+    #
     converter(file_name_with_path)
+
