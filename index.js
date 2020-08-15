@@ -37,14 +37,14 @@ var server = http.createServer(function (req, resp) {
 
    else if(req.url === "/run_code/" && req.method === 'POST'){
 
-        // console.log("...............> in post method");
+        console.log("...............> in post method");
         var body = '';
         req.on('data', function (data) {
             body += data;
         var spawn = require("child_process").spawn;
         var process = spawn('python', ["./codeBasedConveter.py", data.toString()]);
         process.stdout.on('data', function(data) {
-        // console.log((data.toString()))
+        console.log((data.toString()))
         resp.setHeader('Content-Type', 'application/json');
         resp.end((data.toString()));
         } )

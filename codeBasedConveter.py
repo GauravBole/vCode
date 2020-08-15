@@ -217,7 +217,7 @@ if __name__ == '__main__':
     """
 
     python_script = sys.argv[1]
-
+    print(python_script, "...................>")
     try:
         user_file_name = sys.argv[2]
     except (AttributeError, IndexError) as e:
