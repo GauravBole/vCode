@@ -5,6 +5,5 @@ import sys
 import machine 
 import music 
 import random
-#
-if True :
-  display.show(Image.HAPPY)
+while True:
+  display.scroll(0)
