@@ -4,8 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 var server = http.createServer(function (req, resp) {
-    var path = require('path');
-var mime = require('mime');
+
 var fs = require('fs');
 
     // console.log(req.method, "requested method", req.url)
