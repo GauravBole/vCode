@@ -5,5 +5,6 @@ import sys
 import machine 
 import music 
 import random
-while True:
+#
+if True :
   display.show(Image.HEART)

@@ -196,8 +196,6 @@
 <br/>
 <div style="text-align: center">
     <button type="button" name="stepButton" onclick="runCode()" class="btn btn-secondary">RUN</button>
-<!--    <button type="button" name="stepButton" onclick="runCode()" class="btn btn-secondary">Download .hex</button>-->
-
     <div hidden>
         <textarea type="text" id="code" style="height: 500px ; width: 500px"></textarea>
     </div>
@@ -276,17 +274,21 @@
                 if (data['message'] === "success") {
                     // alert("Your Script Running Check Microbit")
                     $('#id_message_body').html("");
-                    $('#id_message_body').append(`<p>Your Script Running please Check Microbit</p>`)
+                    $('#id_message_body').append(`<p>Your Script Running please Check Micro-bit</p>`)
                     $('#id_message').modal('show');
                 } else {
                     $('#id_message_body').html("");
-                    $('#id_message_body').append(`<p>${data['message']}</p>`)
+                    $('#id_message_body').append(`<p>${data['message']}</p>
+                                                <p>If you are running on server then please download .hex file from  <a href="/download_hex/" target="_blank">hear</a>
+                                                 and then burn in micro-bit. For demo <a href="" target="_blank">Demo</a></p>
+                                                <p>Or if you are using local system then <a href="" target="_blank">Demo</a></p>`)
                     $('#id_message').modal('show');
                     // alert(data['message'])
                 }
             }
         })
     }
+
 </script>
 <script>
     function myUpdateFunction(event) {

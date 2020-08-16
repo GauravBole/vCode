@@ -4,7 +4,11 @@ var fs = require('fs');
 var path = require('path');
 
 var server = http.createServer(function (req, resp) {
-    // console.log(req.method, "requested method")
+    var path = require('path');
+var mime = require('mime');
+var fs = require('fs');
+
+    // console.log(req.method, "requested method", req.url)
     if (req.url === "/") {
 
 
@@ -51,6 +55,15 @@ var server = http.createServer(function (req, resp) {
         })
 
     }
+   else if(req.url === "/download_hex/"){
+        const file = `${__dirname}/micro_bit/my_hex.hex`;
+          resp.setHeader('Content-disposition', 'attachment; filename=' + "my_hex.hex");
+        resp.setHeader('Content-type', "application/x-binary", 'attachment; filename=dramaticpenguin.hext');
+
+      var filestream = fs.createReadStream(file);
+      filestream.pipe(resp);
+    }
+
     else {
 
         resp.writeHead(200, { 'Content-Type': 'text/html' });
